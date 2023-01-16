@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
-
 
 const Nav = () => {
     const [menuIcon, setMenuIcon] = useState();
@@ -143,30 +142,50 @@ const Nav = () => {
 
     return (
         <Nav>
-            <div className={menuIcon ? 'navbar active' : 'navbar'}>
+            <div className={menuIcon ? "navbar active" : "navbar"}>
                 <ul className="navbar-lists">
-                    <li >
-                        <NavLink to='/' className='navbar-link' onClick={() => setMenuIcon(false)}>
+                    <li>
+                        <NavLink
+                            to="/"
+                            className="navbar-link"
+                            onClick={() => setMenuIcon(false)}
+                        >
                             Home
                         </NavLink>
                     </li>
-                    <li >
-                        <NavLink to='/about' className='navbar-link' onClick={() => setMenuIcon(false)}>
+                    <li>
+                        <NavLink
+                            to="/about"
+                            className="navbar-link"
+                            onClick={() => setMenuIcon(false)}
+                        >
                             About
                         </NavLink>
                     </li>
-                    <li >
-                        <NavLink to='/products' className='navbar-link' onClick={() => setMenuIcon(false)}>
+                    <li>
+                        <NavLink
+                            to="/products"
+                            className="navbar-link"
+                            onClick={() => setMenuIcon(false)}
+                        >
                             Products
                         </NavLink>
                     </li>
-                    <li >
-                        <NavLink to='/contact' className='navbar-link' onClick={() => setMenuIcon(false)}>
+                    <li>
+                        <NavLink
+                            to="/contact"
+                            className="navbar-link"
+                            onClick={() => setMenuIcon(false)}
+                        >
                             Contact
                         </NavLink>
                     </li>
-                    <li >
-                        <NavLink to='/cart' className='navbar-link cart-trolley--link' onClick={() => setMenuIcon(false)}>
+                    <li>
+                        <NavLink
+                            to="/cart"
+                            className="navbar-link cart-trolley--link"
+                            onClick={() => setMenuIcon(false)}
+                        >
                             <BsCart3 className="cart-trolley" />
                             <span className="cart-total--item"> 10 </span>
                         </NavLink>
@@ -176,20 +195,20 @@ const Nav = () => {
                 {/* open close button for mobile */}
 
                 <div className="mobile-navbar-btn">
-                    <GiHamburgerMenu name="menu-outline"
+                    <GiHamburgerMenu
+                        name="menu-outline"
                         className="mobile-nav-icon"
                         onClick={() => setMenuIcon(true)}
                     />
-                    <GrClose name="close-outline"
+                    <GrClose
+                        name="close-outline"
                         className="mobile-nav-icon close-outline"
                         onClick={() => setMenuIcon(false)}
                     />
                 </div>
-
-
             </div>
         </Nav>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;
