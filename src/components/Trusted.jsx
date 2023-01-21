@@ -6,7 +6,7 @@ const Trusted = () => {
     <Wrapper className='brand-section'>
       <div className="container">
         <h3>Trusted By 1000+ Companies</h3>
-        <div className="brand-section-slider">
+        {/* <div className="brand-section-slider">
           <div className="slide">
             <img
               src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
@@ -37,7 +37,7 @@ const Trusted = () => {
               alt="trusted-brands"
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
     </Wrapper>

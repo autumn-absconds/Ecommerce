@@ -35,7 +35,7 @@ const ProductReducer = (state, action) => {
             return {
                 ...state,
                 isSingleLoading: false,
-                SingleProduct: action.payload,
+                singleProduct: action.payload,
 
             }
 
