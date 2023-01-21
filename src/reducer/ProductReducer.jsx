@@ -11,7 +11,7 @@ const ProductReducer = (state, action) => {
         case 'SET_ERROR':
             return {
                 ...state,
-                isLoading:false,
+                isLoading: false,
                 isError: true,
             };
         case 'SET_API_DATA':
@@ -20,10 +20,24 @@ const ProductReducer = (state, action) => {
             });
             return {
                 ...state,
-                isLoading:false,
+                isLoading: false,
                 products: action.payload,
-                featuredProducts:featureData,
-                }
+                featuredProducts: featureData,
+            }
+        case 'SET_SINGLE_LOADING':
+            return {
+                ...state,
+                isSingleLoading: true,
+            };
+
+        case 'SET_SINGLE_API_DATA':
+
+            return {
+                ...state,
+                isSingleLoading: false,
+                SingleProduct: action.payload,
+
+            }
 
 
 
