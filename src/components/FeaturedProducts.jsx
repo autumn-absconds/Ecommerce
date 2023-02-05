@@ -7,6 +7,8 @@ import Product from './Product';
 const FeaturedProducts = () => {
 
 const {isLoading,featuredProducts} = useProductContext();
+// console.log(isLoading)
+// console.log(featuredProducts)
 if(isLoading){
     return <div>...Loading</div>
 }
