@@ -3,21 +3,21 @@ import styled from "styled-components";
 
 import { useParams } from 'react-router-dom'
 import { useProductContext } from '../context/ProductContext';
+import PageNavigation from '../components/PageNavigation';
 
 
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
+  const { getSingleProduct, isSingleLoading, singleProduct } =
+    useProductContext();
 
-  const { getSingleProduct, isSingleLoading, singleProduct } = useProductContext();
   const { id } = useParams();
-  // console.log(singleProduct)
 
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-    // console.log('hi');
-  }, [])
+  }, []);
 
   const {
     id: alias,
@@ -29,13 +29,21 @@ const SingleProduct = () => {
     stock,
     stars,
     reviews,
+    image,
   } = singleProduct;
+
+  if (isSingleLoading) {
+    return <div className="page_loading">Loading.....</div>;
+  }
+
 
 
   return (
-    <div>
-      SingleProduct {name}
-    </div>
+    <Wrapper>
+     <PageNavigation title={name}/>
+
+
+    </Wrapper>
   )
 }
 
